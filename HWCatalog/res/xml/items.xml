@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2010 Cyril Mottier (http://www.cyrilmottier.com)
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<item-array
+    xmlns:hwdroid="http://schemas.android.com/apk/res/com.hw.droid.hwcatalog">
+
+    <text-item
+        hwdroid:text="TextItem" />
+    <text-item
+        hwdroid:enabled="false"
+        hwdroid:text="TextItem (disabled)" />
+    <text-item
+        hwdroid:text="TextItem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus consequat leo, et tincidunt justo tristique in." />
+    <longtext-item
+        hwdroid:text="LongText Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus consequat leo, et tincidunt justo tristique in." />
+    <description-item
+        hwdroid:text="DescriptionItem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus consequat leo, et tincidunt justo tristique in." />
+    <separator-item
+        hwdroid:text="SeparatorItem" />
+    <progress-item
+        hwdroid:isInProgress="true"
+        hwdroid:text="ProgressItem" />
+    <drawable-item
+        hwdroid:enabled="false"
+        hwdroid:text="DrawableItem (disabled)"
+        hwdroid:drawable="@drawable/ic_hwcatalog" />
+    <drawable-item
+        hwdroid:text="DrawableItem (with no drawable)" />
+
+    <subtitle-item
+        hwdroid:text="SubtitleItem"
+        hwdroid:subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus consequat leo, et tincidunt justo tristique in." />
+
+    <subtext-item
+        hwdroid:text="SubtextItem"
+        hwdroid:subtext="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus consequat leo, et tincidunt justo tristique in." />
+
+    <thumbnail-item
+        hwdroid:text="ThumbnailItem"
+        hwdroid:subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus consequat leo, et tincidunt justo tristique in."
+        hwdroid:thumbnail="@drawable/ic_hwcatalog"
+        hwdroid:thumbnailURL="http://www.cyrilmottier.com/files/hwdroid/images/image1.png" />
+
+    <thumbnail-item
+        hwdroid:enabled="false"
+        hwdroid:text="ThumbnailItem (disabled)"
+        hwdroid:subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus consequat leo, et tincidunt justo tristique in."
+        hwdroid:thumbnail="@drawable/ic_hwcatalog" />
+
+</item-array>

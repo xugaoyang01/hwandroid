@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2010 Cyril Mottier (http://www.cyrilmottier.com)
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<resources>
+
+	<style name="Theme.HWDroid" parent="@android:style/Theme">
+	
+		<item name="hwTextAppearance">@style/TextAppearance</item>
+		<item name="hwTextAppearanceLarge">@style/TextAppearance.Large</item>
+		<item name="hwTextAppearanceMedium">@style/TextAppearance.Medium</item>
+		<item name="hwTextAppearanceSmall">@style/TextAppearance.Small</item>
+		<item name="hwTextAppearanceSeparator">@style/TextAppearance.Separator</item>
+		
+		<item name="hwDrawableWidth">@dimen/hw_drawable_width</item>
+		<item name="hwDrawableHeight">@dimen/hw_drawable_height</item>
+		<item name="hwDrawableMargin">@dimen/hw_drawable_margin</item>
+		
+		<item name="hwProgressBarWidth">@dimen/hw_progress_bar_width</item>
+		<item name="hwProgressBarHeight">@dimen/hw_progress_bar_height</item>
+		<item name="hwProgressBarMargin">@dimen/hw_progress_bar_margin</item>
+		
+		<item name="hwItemViewPreferredHeight">@dimen/hw_item_view_height</item>
+		<item name="hwItemViewPreferredHalfHeight">@dimen/hw_item_view_half_height</item>
+		<item name="hwItemViewPreferredPaddingLeft">@dimen/hw_item_view_padding_left</item>
+		<item name="hwSeparatorItemViewPreferredHeight">@dimen/hw_separator_item_view_height</item>
+		
+		<item name="hwTextItemViewStyle">@style/HWDroid.Widget.ItemView.TextItemView</item>
+		<item name="hwLongTextItemViewStyle">@style/HWDroid.Widget.ItemView.LongTextItemView</item>
+		<item name="hwDescriptionItemViewStyle">@style/HWDroid.Widget.ItemView.DescriptionItemView</item>
+		
+		<item name="hwSeparatorItemViewStyle">@style/HWDroid.Widget.ItemView.SeparatorItemView</item>
+		
+		<item name="hwProgressItemViewStyle">@style/HWDroid.Widget.ItemView.ProgressItemView</item>
+		<item name="hwProgressItemViewStyleText">@style/HWDroid.Widget.ItemView.ProgressItemView.Text</item>
+		<item name="hwProgressItemViewStyleProgressBar">@style/HWDroid.Widget.ItemView.ProgressItemView.ProgressBar</item>
+
+		<item name="hwDrawableItemViewStyle">@style/HWDroid.Widget.ItemView.DrawableItemView</item>
+		<item name="hwDrawableItemViewStyleText">@style/HWDroid.Widget.ItemView.DrawableItemView.Text</item>
+		<item name="hwDrawableItemViewStyleDrawable">@style/HWDroid.Widget.ItemView.DrawableItemView.Drawable</item>
+		
+		<item name="hwSubtitleItemViewStyle">@style/HWDroid.Widget.ItemView.SubtitleItemView</item>
+		<item name="hwSubtitleItemViewStyleText">@style/HWDroid.Widget.ItemView.SubtitleItemView.Text</item>
+		<item name="hwSubtitleItemViewStyleSubtitle">@style/HWDroid.Widget.ItemView.SubtitleItemView.Subtitle</item>
+		
+		<item name="hwSubtextItemViewStyle">@style/HWDroid.Widget.ItemView.SubtextItemView</item>
+		<item name="hwSubtextItemViewStyleText">@style/HWDroid.Widget.ItemView.SubtextItemView.Text</item>
+		<item name="hwSubtextItemViewStyleSubtext">@style/HWDroid.Widget.ItemView.SubtextItemView.Subtext</item>
+		
+		<item name="hwThumbnailItemViewStyle">@style/HWDroid.Widget.ItemView.ThumbnailItemView</item>
+		<item name="hwThumbnailItemViewStyleText">@style/HWDroid.Widget.ItemView.ThumbnailItemView.Text</item>
+		<item name="hwThumbnailItemViewStyleSubtitle">@style/HWDroid.Widget.ItemView.ThumbnailItemView.Subtitle</item>
+		<item name="hwThumbnailItemViewStyleThumbnail">@style/HWDroid.Widget.ItemView.ThumbnailItemView.Thumbnail</item>
+		
+		<item name="hwSegmentTextColor">@android:color/black</item>
+		<item name="hwSegmentTextSize">14sp</item>
+		<item name="hwSegmentBackground">@drawable/hw_segment_label</item>
+		<item name="hwSegmentCheckmark">@drawable/hw_segment_checkmark</item>
+		<item name="hwSegmentedBarStyle">@style/HWDroid.Widget.SegmentedBar</item>
+		<item name="hwSegmentedHostStyle">@style/HWDroid.Widget.SegmentedHost</item>
+		
+		<item name="hwActionBarTitleColor">@android:color/white</item>
+		<item name="hwActionBarBackground">@color/hw_action_bar_tint</item>
+		<item name="hwActionBarItemBackground">@drawable/hw_action_bar_item</item>
+		<item name="hwActionBarDividerDrawable">@color/hw_action_bar_divider_tint</item>
+		<item name="hwActionBarDividerWidth">1px</item>
+		<item name="hwActionBarApplicationDrawable">@null</item>
+		<item name="hwActionBarHomeDrawable">@null</item>
+		<item name="hwActionBarItemColorNormal">@android:color/white</item>
+		<item name="hwActionBarItemColorAlt">@android:color/black</item>
+		<item name="hwActionBarMaxItems">3</item>
+
+		<item name="hwActionBarStyle">@style/HWDroid.Widget.ActionBar</item>
+		<item name="hwActionBarTitleStyle">@style/HWDroid.Widget.ActionBar.Title</item>
+		<item name="hwActionBarItemStyle">@style/HWDroid.Widget.ActionBar.Item</item>
+
+		<item name="hwTabIndicatorHeight">38dp</item>
+		<item name="hwTabIndicatorTextAppearance">@style/TextAppearance.TabIndicator</item>
+		<item name="hwTabIndicatorBackground">@drawable/hw_tab_indicator</item>
+		
+		<item name="hwTabIndicatorStyle">@style/HWDroid.Widget.TabIndicator</item>
+		
+		<item name="hwQuickActionBarStyle">@style/HWDroid.Widget.QuickAction.Bar</item>
+		<item name="hwQuickActionBarItemStyle">@style/HWDroid.Widget.QuickAction.Bar.Item</item>
+		<item name="hwQuickActionGridStyle">@style/HWDroid.Widget.QuickAction.Grid</item>
+		<item name="hwQuickActionGridItemStyle">@style/HWDroid.Widget.QuickAction.Grid.Item</item>
+		
+		<item name="hwPageIndicatorStyle">@style/HWDroid.Widget.PageIndicator</item>
+	</style>
+	
+	
+	<style name="Theme.HWDroid.NoTitleBar" parent="@style/Theme.HWDroid">
+	
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowNoTitle">true</item>
+	
+	</style>
+	
+	<!-- 
+	   The following themes inherits from the Theme.Light Android base theme. 
+	   They are strict copies of the previous themes which a large source of errors
+	   However, it looks like there are no way to overcome this (multiple inheritance
+	   is not permitted).
+	-->
+	<style name="Theme.HWDroid.Light" parent="@android:style/Theme.Light">
+	
+		<item name="hwTextAppearance">@style/TextAppearance</item>
+		<item name="hwTextAppearanceLarge">@style/TextAppearance.Large</item>
+		<item name="hwTextAppearanceMedium">@style/TextAppearance.Medium</item>
+		<item name="hwTextAppearanceSmall">@style/TextAppearance.Small</item>
+		<item name="hwTextAppearanceSeparator">@style/TextAppearance.Separator</item>
+		
+		<item name="hwDrawableWidth">@dimen/hw_drawable_width</item>
+		<item name="hwDrawableHeight">@dimen/hw_drawable_height</item>
+		<item name="hwDrawableMargin">@dimen/hw_drawable_margin</item>
+		
+		<item name="hwProgressBarWidth">@dimen/hw_progress_bar_width</item>
+		<item name="hwProgressBarHeight">@dimen/hw_progress_bar_height</item>
+		<item name="hwProgressBarMargin">@dimen/hw_progress_bar_margin</item>
+		
+		<item name="hwItemViewPreferredHeight">@dimen/hw_item_view_height</item>
+		<item name="hwItemViewPreferredHalfHeight">@dimen/hw_item_view_half_height</item>
+		<item name="hwItemViewPreferredPaddingLeft">@dimen/hw_item_view_padding_left</item>
+		<item name="hwSeparatorItemViewPreferredHeight">@dimen/hw_separator_item_view_height</item>
+		
+		<item name="hwTextItemViewStyle">@style/HWDroid.Widget.ItemView.TextItemView</item>
+		<item name="hwLongTextItemViewStyle">@style/HWDroid.Widget.ItemView.LongTextItemView</item>
+		<item name="hwDescriptionItemViewStyle">@style/HWDroid.Widget.ItemView.DescriptionItemView</item>
+		
+		<item name="hwSeparatorItemViewStyle">@style/HWDroid.Widget.ItemView.SeparatorItemView</item>
+		
+		<item name="hwProgressItemViewStyle">@style/HWDroid.Widget.ItemView.ProgressItemView</item>
+		<item name="hwProgressItemViewStyleText">@style/HWDroid.Widget.ItemView.ProgressItemView.Text</item>
+		<item name="hwProgressItemViewStyleProgressBar">@style/HWDroid.Widget.ItemView.ProgressItemView.ProgressBar</item>
+
+		<item name="hwDrawableItemViewStyle">@style/HWDroid.Widget.ItemView.DrawableItemView</item>
+		<item name="hwDrawableItemViewStyleText">@style/HWDroid.Widget.ItemView.DrawableItemView.Text</item>
+		<item name="hwDrawableItemViewStyleDrawable">@style/HWDroid.Widget.ItemView.DrawableItemView.Drawable</item>
+		
+		<item name="hwSubtitleItemViewStyle">@style/HWDroid.Widget.ItemView.SubtitleItemView</item>
+		<item name="hwSubtitleItemViewStyleText">@style/HWDroid.Widget.ItemView.SubtitleItemView.Text</item>
+		<item name="hwSubtitleItemViewStyleSubtitle">@style/HWDroid.Widget.ItemView.SubtitleItemView.Subtitle</item>
+		
+		<item name="hwSubtextItemViewStyle">@style/HWDroid.Widget.ItemView.SubtextItemView</item>
+		<item name="hwSubtextItemViewStyleText">@style/HWDroid.Widget.ItemView.SubtextItemView.Text</item>
+		<item name="hwSubtextItemViewStyleSubtext">@style/HWDroid.Widget.ItemView.SubtextItemView.Subtext</item>
+		
+		<item name="hwThumbnailItemViewStyle">@style/HWDroid.Widget.ItemView.ThumbnailItemView</item>
+		<item name="hwThumbnailItemViewStyleText">@style/HWDroid.Widget.ItemView.ThumbnailItemView.Text</item>
+		<item name="hwThumbnailItemViewStyleSubtitle">@style/HWDroid.Widget.ItemView.ThumbnailItemView.Subtitle</item>
+		<item name="hwThumbnailItemViewStyleThumbnail">@style/HWDroid.Widget.ItemView.ThumbnailItemView.Thumbnail</item>
+		
+		<item name="hwSegmentTextColor">@android:color/black</item>
+		<item name="hwSegmentTextSize">14sp</item>
+		<item name="hwSegmentBackground">@drawable/hw_segment_label</item>
+		<item name="hwSegmentCheckmark">@drawable/hw_segment_checkmark</item>
+		<item name="hwSegmentedBarStyle">@style/HWDroid.Widget.SegmentedBar</item>
+		<item name="hwSegmentedHostStyle">@style/HWDroid.Widget.SegmentedHost</item>
+		
+		<item name="hwActionBarTitleColor">@android:color/white</item>
+		<item name="hwActionBarBackground">@color/hw_action_bar_tint</item>
+		<item name="hwActionBarItemBackground">@drawable/hw_action_bar_item</item>
+		<item name="hwActionBarDividerDrawable">@color/hw_action_bar_divider_tint</item>
+		<item name="hwActionBarDividerWidth">1px</item>
+		<item name="hwActionBarApplicationDrawable">@null</item>
+		<item name="hwActionBarHomeDrawable">@null</item>
+		<item name="hwActionBarItemColorNormal">@android:color/white</item>
+		<item name="hwActionBarItemColorAlt">@android:color/black</item>
+		<item name="hwActionBarMaxItems">3</item>
+
+		<item name="hwActionBarStyle">@style/HWDroid.Widget.ActionBar</item>
+		<item name="hwActionBarTitleStyle">@style/HWDroid.Widget.ActionBar.Title</item>
+		<item name="hwActionBarItemStyle">@style/HWDroid.Widget.ActionBar.Item</item>
+
+		<item name="hwTabIndicatorHeight">38dp</item>
+		<item name="hwTabIndicatorTextAppearance">@style/TextAppearance.TabIndicator</item>
+		<item name="hwTabIndicatorBackground">@drawable/hw_tab_indicator</item>
+		
+		<item name="hwTabIndicatorStyle">@style/HWDroid.Widget.TabIndicator</item>
+		
+		<item name="hwQuickActionBarStyle">@style/HWDroid.Widget.QuickAction.Bar</item>
+		<item name="hwQuickActionBarItemStyle">@style/HWDroid.Widget.QuickAction.Bar.Item</item>
+		<item name="hwQuickActionGridStyle">@style/HWDroid.Widget.QuickAction.Grid</item>
+		<item name="hwQuickActionGridItemStyle">@style/HWDroid.Widget.QuickAction.Grid.Item</item>
+		
+		<item name="hwPageIndicatorStyle">@style/HWDroid.Widget.PageIndicator</item>
+	</style>
+	
+	<style name="Theme.HWDroid.Light.NoTitleBar" parent="@style/Theme.HWDroid.Light">
+	
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowNoTitle">true</item>
+	
+	</style>
+</resources>

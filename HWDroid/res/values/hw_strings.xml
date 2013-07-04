@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2010 Cyril Mottier (http://www.cyrilmottier.com)
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<resources>
+
+	<string name="hw_go_home">Go home</string>
+	<string name="hw_search">Search</string>
+	<string name="hw_talk">Talk</string>
+	<string name="hw_compose">Compose</string>
+	<string name="hw_export">Export</string>
+	<string name="hw_share">Share</string>
+	<string name="hw_refresh">Refresh</string>
+	<string name="hw_take_photo">Take photo</string>
+	<string name="hw_pick_photo">Pick photo</string>
+	<string name="hw_locate">Locate</string>
+	<string name="hw_edit">Edit</string>
+	<string name="hw_add">Add</string>
+	<string name="hw_star">Star</string>
+	<string name="hw_sort_by_size">Sort by size</string>
+	<string name="hw_sort_alpha">Sort alphabetically</string>
+	<string name="hw_locate_myself">Locate myself</string>
+	<string name="hw_compass">Compass</string>
+	<string name="hw_help">Help</string>
+	<string name="hw_info">Info</string>
+	<string name="hw_settings">Settings</string>
+	<string name="hw_list">List</string>
+	<string name="hw_trashcan">Delete</string>
+	<string name="hw_eye">See</string>
+	<string name="hw_all_friends">All friends</string>
+	<string name="hw_group">Group</string>
+	<string name="hw_gallery">Gallery</string>
+	<string name="hw_slideshow">Slideshow</string>
+	<string name="hw_mail">Mail</string>
+
+</resources>

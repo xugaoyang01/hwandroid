@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2010 Cyril Mottier (http://www.cyrilmottier.com)
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<resources>
+
+	<!-- Item-based lists related attributes -->
+	<attr name="hwTextAppearance" format="reference" />
+	<attr name="hwTextAppearanceLarge" format="reference" />
+	<attr name="hwTextAppearanceMedium" format="reference" />
+	<attr name="hwTextAppearanceSmall" format="reference" />
+	<attr name="hwTextAppearanceSeparator" format="reference" />
+
+	<attr name="hwDrawableWidth" format="dimension" />
+	<attr name="hwDrawableHeight" format="dimension" />
+	<attr name="hwDrawableMargin" format="dimension" />
+
+	<attr name="hwProgressBarWidth" format="dimension" />
+	<attr name="hwProgressBarHeight" format="dimension" />
+	<attr name="hwProgressBarMargin" format="dimension" />
+
+	<attr name="hwItemViewPreferredHeight" format="dimension" />
+	<attr name="hwItemViewPreferredHalfHeight" format="dimension" />
+	<attr name="hwItemViewPreferredPaddingLeft" format="dimension" />
+	<attr name="hwSeparatorItemViewPreferredHeight" format="dimension" />
+
+	<attr name="hwTextItemViewStyle" format="reference" />
+	<attr name="hwLongTextItemViewStyle" format="reference" />
+	<attr name="hwDescriptionItemViewStyle" format="reference" />
+
+	<attr name="hwSeparatorItemViewStyle" format="reference" />
+
+	<attr name="hwProgressItemViewStyle" format="dimension" />
+	<attr name="hwProgressItemViewStyleText" format="dimension" />
+	<attr name="hwProgressItemViewStyleProgressBar" format="dimension" />
+
+	<attr name="hwDrawableItemViewStyle" format="reference" />
+	<attr name="hwDrawableItemViewStyleText" format="reference" />
+	<attr name="hwDrawableItemViewStyleDrawable" format="reference" />
+
+	<attr name="hwSubtitleItemViewStyle" format="reference" />
+	<attr name="hwSubtitleItemViewStyleText" format="reference" />
+	<attr name="hwSubtitleItemViewStyleSubtitle" format="reference" />
+
+	<attr name="hwSubtextItemViewStyle" format="reference" />
+	<attr name="hwSubtextItemViewStyleText" format="reference" />
+	<attr name="hwSubtextItemViewStyleSubtext" format="reference" />
+
+	<attr name="hwThumbnailItemViewStyle" format="reference" />
+	<attr name="hwThumbnailItemViewStyleText" format="reference" />
+	<attr name="hwThumbnailItemViewStyleSubtitle" format="reference" />
+	<attr name="hwThumbnailItemViewStyleThumbnail" format="reference" />
+
+
+	<!-- SegmentedBar related attributes -->
+	<attr name="hwSegmentTextColor" format="color" />
+	<attr name="hwSegmentTextSize" format="dimension" />
+	<attr name="hwSegmentBackground" format="reference" />
+	<attr name="hwSegmentCheckmark" format="reference" />
+	<attr name="hwSegmentedBarStyle" format="reference" />
+	<attr name="hwSegmentedHostStyle" format="reference" />
+
+
+	<!-- ActionBar related attributes -->
+	<attr name="hwActionBarTitleColor" format="color" />
+	<attr name="hwActionBarBackground" format="reference" />
+	<attr name="hwActionBarItemBackground" format="reference" />
+	<attr name="hwActionBarDividerDrawable" format="reference" />
+	<attr name="hwActionBarDividerWidth" format="dimension" />
+	<attr name="hwActionBarApplicationDrawable" format="reference" /> 
+	<attr name="hwActionBarHomeDrawable" format="reference" />
+	<attr name="hwActionBarItemColorNormal" format="reference|color" />
+	<attr name="hwActionBarItemColorAlt" format="reference|color" />
+	<attr name="hwActionBarMaxItems" format="integer" />
+
+	<attr name="hwActionBarStyle" format="reference" />
+	<attr name="hwActionBarTitleStyle" format="reference" />
+	<attr name="hwActionBarDividerStyle" format="reference" />
+	<attr name="hwActionBarItemStyle" format="reference" />
+
+	<attr name="hwTabIndicatorHeight" format="dimension" />
+	<attr name="hwTabIndicatorTextAppearance" format="reference" />
+	<attr name="hwTabIndicatorBackground" format="reference" />
+	
+	<attr name="hwTabIndicatorStyle" format="reference" />
+
+	<!-- QuickAction related attributes -->
+	<attr name="hwQuickActionBarStyle" format="reference" />
+	<attr name="hwQuickActionBarItemStyle" format="reference" />
+	<attr name="hwQuickActionGridStyle" format="reference" />
+	<attr name="hwQuickActionGridItemStyle" format="reference" />
+	
+	<!-- PageIndicator related attributes -->
+	<attr name="hwPageIndicatorStyle" format="reference" />
+
+
+	<!--			-->
+	<!-- Styleables -->
+	<!--			-->
+
+
+	<!-- List items related attributes -->
+	<declare-styleable name="Item">
+		<attr name="enabled" format="boolean" />
+	</declare-styleable>
+
+	<declare-styleable name="TextItem">
+		<attr name="text" format="string" />
+	</declare-styleable>
+	<declare-styleable name="LongTextItem" />
+	<declare-styleable name="DescriptionItem" />
+	<declare-styleable name="SeparatorItem" />
+
+	<declare-styleable name="ProgressItem">
+		<attr name="isInProgress" format="boolean" />
+	</declare-styleable>
+
+	<declare-styleable name="DrawableItem">
+		<attr name="drawable" format="reference" />
+	</declare-styleable>
+
+	<declare-styleable name="SubtitleItem">
+		<attr name="subtitle" format="string" />
+	</declare-styleable>
+
+	<declare-styleable name="SubtextItem">
+		<attr name="subtext" format="string" />
+	</declare-styleable>
+
+	<declare-styleable name="ThumbnailItem">
+		<attr name="thumbnail" format="reference" />
+		<attr name="thumbnailURL" format="string" />
+	</declare-styleable>
+
+	<!-- SegmentedBar related attributes -->
+	<declare-styleable name="SegmentedBar">
+		<attr name="dividerDrawable" format="reference" />
+		<attr name="dividerWidth" format="dimension" />
+	</declare-styleable>
+
+	<declare-styleable name="SegmentedHost">
+		<attr name="segmentedBar" format="reference" />
+		<attr name="segmentedContentView" format="reference" />
+	</declare-styleable>
+
+
+	<!-- ActionBar related attributes -->
+	<declare-styleable name="ActionBar">
+		<attr name="title" format="string" />
+		<attr name="type">
+			<enum name="normal" value="0" />
+			<enum name="dashboard" value="1" />
+			<enum name="empty" value="2" />
+		</attr>
+		<attr name="dividerDrawable" />
+		<attr name="dividerWidth" />
+		<attr name="homeDrawable" format="reference" />
+		<attr name="maxItems" format="integer" />
+	</declare-styleable>
+	
+	<declare-styleable name="AsyncImageView">
+		<attr name="defaultSrc" format="reference" />
+		<attr name="url" format="string" />
+		<attr name="inDensity">
+			<enum name="ldpi" value="120" />
+			<enum name="mdpi" value="160" />
+			<enum name="hdpi" value="240" />
+			<enum name="xhdpi" value="320" />
+		</attr>
+	</declare-styleable>
+	
+	<declare-styleable name="PageIndicator">
+		<attr name="dotCount" format="integer" />
+		<attr name="activeDot" format="integer" />
+		<attr name="dotDrawable" format="reference" />
+		<attr name="dotSpacing" format="dimension" />
+		<attr name="gravity">
+			<flag name="top" value="0x30" />
+			<flag name="bottom" value="0x50" />
+			<flag name="left" value="0x03" />
+			<flag name="right" value="0x05" />
+			<flag name="center_vertical" value="0x10" />
+			<flag name="center_horizontal" value="0x01" />
+			<flag name="center" value="0x11" />
+		</attr>
+		<attr name="dotType">
+			<enum name="single" value="0" />
+			<enum name="multiple" value="1" />
+		</attr>
+    </declare-styleable>
+
+</resources>
