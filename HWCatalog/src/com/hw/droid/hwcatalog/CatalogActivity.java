@@ -42,10 +42,13 @@ public class CatalogActivity extends HWListActivity {
         adapter.add(createTextItem(R.string.simple_async_image_view_label, SimpleAsyncImageViewActivity.class));
         adapter.add(createTextItem(R.string.async_image_view_list_view_label, AsyncImageViewListActivity.class));
         adapter.add(createTextItem(R.string.paged_view_label, PagedViewActivity.class));
+        adapter.add(createTextItem("Dropdown Dialog", DropDownDialogActivity.class));
 
         setListAdapter(adapter);
+        getListView().setDivider(null);
+        getListView().setDividerHeight(0);
 
-        addActionBarItem(getActionBar()
+        addActionBarItem(getActionBarImpl()
                 .newActionBarItem(NormalActionBarItem.class)
                 .setDrawable(new ActionBarDrawable(this, R.drawable.ic_action_bar_info)), R.id.action_bar_view_info);
     }
@@ -55,12 +58,18 @@ public class CatalogActivity extends HWListActivity {
         textItem.setTag(klass);
         return textItem;
     }
+    
+    private TextItem createTextItem(String str, Class<?> klass) {
+        final TextItem textItem = new TextItem(str);
+        textItem.setTag(klass);
+        return textItem;
+    }
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         final TextItem textItem = (TextItem) l.getAdapter().getItem(position);
         Intent intent = new Intent(CatalogActivity.this, (Class<?>) textItem.getTag());
-        intent.putExtra(ActionBarActivity.HW_ACTION_BAR_TITLE, textItem.text);
+        intent.putExtra(ActionBarActivity.HW_ACTION_BAR_TITLE, textItem.mText);
         startActivity(intent);
     }
 

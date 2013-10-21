@@ -38,7 +38,7 @@ public class ActionBarActivity extends HWActivity {
         ((TextView) findViewById(R.id.text)).setText(R.string.first_screen);
 
         addActionBarItem(Type.Refresh, R.id.action_bar_refresh);
-        addActionBarItem(getActionBar()
+        addActionBarItem(getActionBarImpl()
                 .newActionBarItem(NormalActionBarItem.class)
                 .setDrawable(R.drawable.ic_title_export)
                 .setContentDescription(R.string.hw_export), R.id.action_bar_export);

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yunos.yundroid.widget.itemview.DropdownDialogBtnItemView	
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	android:layout_width="match_parent"
+    android:orientation="vertical"
+	android:background="@drawable/hw_dropdown_dialog_btn_item_view"
+	android:gravity="center">
+		
+    <LinearLayout 
+        android:minHeight="54dp"
+        android:layout_height="wrap_content"
+	    android:layout_width="match_parent"
+	    android:paddingLeft="25dp"
+	    android:paddingRight="25dp"
+	    android:gravity="center"
+        >
+        <TextView
+			android:id="@+id/gd_text"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+	        android:textSize="18sp"
+	        android:textColor="@drawable/hw_dropdown_dialog_btn_item_text_color"
+			android:singleLine="false"
+			android:ellipsize="end" /> 
+    </LinearLayout>
+    
+    <View 
+	    android:id="@+id/gd_divider_view"
+	    android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:layout_marginLeft="12dp"
+	    android:layout_marginRight="12dp"
+	    android:background="@drawable/dialog_line_horizontal">
+	</View>   
+</com.yunos.yundroid.widget.itemview.DropdownDialogBtnItemView>

@@ -437,7 +437,7 @@ public class TweakedItemViewActivity extends HWListActivity {
 
         public String getString(int columnIndex) {
             final HeadedTextItem item = (HeadedTextItem) mAdapter.getItem(mPosition);
-            return (String) item.text.substring(0, 1);
+            return (String) item.mText.substring(0, 1);
         }
 
         public boolean getWantsAllOnMoveCalls() {
@@ -518,6 +518,12 @@ public class TweakedItemViewActivity extends HWListActivity {
 
         public void unregisterDataSetObserver(DataSetObserver observer) {
         }
+
+		@Override
+		public int getType(int arg0) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
     }
 
 }

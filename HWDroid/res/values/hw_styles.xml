@@ -245,5 +245,10 @@
 		<item name="@android:windowEnterAnimation">@anim/hw_grow_from_bottom</item>
 		<item name="@android:windowExitAnimation">@anim/hw_shrink_from_top</item>
 	</style>
+	
+    <style name="HWDroid.Animation.DropDownDialog">
+		<item name="@android:windowEnterAnimation">@anim/hw_alpha_in</item>
+		<item name="@android:windowExitAnimation">@anim/hw_alpha_out</item>
+	</style>	
 
 </resources>

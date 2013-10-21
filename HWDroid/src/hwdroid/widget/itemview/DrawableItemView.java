@@ -51,7 +51,7 @@ public class DrawableItemView extends LinearLayout implements ItemView {
 
     public void setObject(Item object) {
         final DrawableItem item = (DrawableItem) object;
-        mTextView.setText(item.text);
+        mTextView.setText(item.mText);
 
         final int drawableId = item.drawableId;
         if (drawableId == 0) {
@@ -61,5 +61,71 @@ public class DrawableItemView extends LinearLayout implements ItemView {
             mImageView.setImageResource(drawableId);
         }
     }
+
+	@Override
+	public void setTextView(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setSubtextView(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setHeaderTextView(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setIcon(ImageView view) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeIcon() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ImageView getIcon() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setCheckBox(boolean status) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setCheckBox() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setCustomView(int viewId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public View getCustomView() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setDividerVisible(boolean visible) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

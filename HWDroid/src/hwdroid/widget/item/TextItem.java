@@ -41,7 +41,7 @@ public class TextItem extends Item {
     /**
      * The item's text.
      */
-    public String text;
+    public String mText;
 
     /**
      * @hide
@@ -55,7 +55,7 @@ public class TextItem extends Item {
      * @param text The text used to create this item.
      */
     public TextItem(String text) {
-        this.text = text;
+        this.mText = text;
     }
 
     @Override
@@ -68,7 +68,7 @@ public class TextItem extends Item {
         super.inflate(r, parser, attrs);
 
         TypedArray a = r.obtainAttributes(attrs, R.styleable.TextItem);
-        text = a.getString(R.styleable.TextItem_text);
+        mText = a.getString(R.styleable.TextItem_text);
         a.recycle();
     }
 

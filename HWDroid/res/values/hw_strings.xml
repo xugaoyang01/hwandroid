@@ -47,5 +47,7 @@
 	<string name="hw_gallery">Gallery</string>
 	<string name="hw_slideshow">Slideshow</string>
 	<string name="hw_mail">Mail</string>
+	<string name="hw_ok">OK</string>
+	<string name="hw_cancel">Cancel</string>
 
 </resources>

@@ -79,7 +79,7 @@ public interface ActionBarActivity {
      * @see ActionBarActivity#addActionBarItem(hwdroid.widget.ActionBarItem.Type)
      * @return The {@link ActionBar} currently displayed on screen
      */
-    ActionBar getActionBar();
+    ActionBar getActionBarImpl();
 
     /**
      * A simple utility method that casts the Application returned by

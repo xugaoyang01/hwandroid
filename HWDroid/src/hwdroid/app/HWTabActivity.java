@@ -73,7 +73,7 @@ public class HWTabActivity extends TabActivity implements ActionBarActivity {
         if (mActionBarHost == null) {
             throw new RuntimeException("Your content must have an ActionBarHost whose id attribute is R.id.hw_action_bar_host");
         }
-        mActionBarHost.getActionBar().setOnActionBarListener(mActionBarListener);
+        mActionBarHost.getActionBarImpl().setOnActionBarListener(mActionBarListener);
     }
 
     public void onPostContentChanged() {
@@ -103,7 +103,7 @@ public class HWTabActivity extends TabActivity implements ActionBarActivity {
         }
 
         final int visibility = intent.getIntExtra(ActionBarActivity.HW_ACTION_BAR_VISIBILITY, View.VISIBLE);
-        getActionBar().setVisibility(visibility);
+        getActionBarImpl().setVisibility(visibility);
     }
 
     // @Override
@@ -113,7 +113,7 @@ public class HWTabActivity extends TabActivity implements ActionBarActivity {
 
     @Override
     public void setTitle(CharSequence title) {
-        getActionBar().setTitle(title);
+        getActionBarImpl().setTitle(title);
     }
 
     @Override
@@ -121,24 +121,24 @@ public class HWTabActivity extends TabActivity implements ActionBarActivity {
         setTitle(getString(titleId));
     }
 
-    public ActionBar getActionBar() {
-        return mActionBarHost.getActionBar();
+    public ActionBar getActionBarImpl() {
+        return mActionBarHost.getActionBarImpl();
     }
 
     public ActionBarItem addActionBarItem(ActionBarItem item) {
-        return getActionBar().addItem(item);
+        return getActionBarImpl().addItem(item);
     }
 
     public ActionBarItem addActionBarItem(ActionBarItem item, int itemId) {
-        return getActionBar().addItem(item, itemId);
+        return getActionBarImpl().addItem(item, itemId);
     }
 
     public ActionBarItem addActionBarItem(ActionBarItem.Type actionBarItemType) {
-        return getActionBar().addItem(actionBarItemType);
+        return getActionBarImpl().addItem(actionBarItemType);
     }
 
     public ActionBarItem addActionBarItem(ActionBarItem.Type actionBarItemType, int itemId) {
-        return getActionBar().addItem(actionBarItemType, itemId);
+        return getActionBarImpl().addItem(actionBarItemType, itemId);
     }
 
     public FrameLayout getContentView() {
@@ -164,7 +164,7 @@ public class HWTabActivity extends TabActivity implements ActionBarActivity {
                 }
 
             } else {
-                if (!onHandleActionBarItemClick(getActionBar().getItem(position), position)) {
+                if (!onHandleActionBarItemClick(getActionBarImpl().getItem(position), position)) {
                     if (Config.HW_WARNING_LOGS_ENABLED) {
                         Log.w(LOG_TAG, "Click on item at position " + position + " dropped down to the floor");
                     }

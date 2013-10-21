@@ -15,6 +15,8 @@
  */
 package hwdroid.widget.itemview;
 
+import android.view.View;
+import android.widget.ImageView;
 import hwdroid.widget.ItemAdapter;
 import hwdroid.widget.item.Item;
 
@@ -32,20 +34,17 @@ import hwdroid.widget.item.Item;
  */
 public interface ItemView {
 
-    /**
-     * Called by the {@link ItemAdapter} the first time the ItemView is created.
-     * This is usually a good time to keep references on sub-Views.
-     */
     void prepareItemView();
-
-    /**
-     * Called by the {@link ItemAdapter} whenever an ItemView is displayed on
-     * screen. This may occur at the first display time or when the ItemView is
-     * reused by the ListView.
-     * 
-     * @param item The {@link Item} containing date used to populate this
-     *            ItemView
-     */
     void setObject(Item item);
-
+    void setTextView(String text); 
+    void setSubtextView(String text);
+    void setHeaderTextView(String text);
+    void setIcon(ImageView view);
+    void removeIcon();
+    ImageView getIcon();
+    void setCheckBox(boolean status);
+    void setCheckBox();
+    void setCustomView(int viewId);
+    View getCustomView();
+    void setDividerVisible(boolean visible);
 }
