@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.view.Gravity;
@@ -17,17 +18,21 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.LinearLayout.LayoutParams;
 
 import com.hw.droid.R;
+import hwdroid.dialog.DialogInterface;
 
 public abstract class DialogType {
 	
 	protected Context mContext;
-	protected PopupWindow mPopupWindow;
+	protected XXDropDownDialog mPopupWindow;
 	protected ItemAdapter mAdapter;
 	protected LocalHandler mHandler;
 	protected DialogInterface mDialogInterface;
@@ -37,6 +42,7 @@ public abstract class DialogType {
 	private LinearLayout mTitleView;
 	private TextView mTitleText;
 	private FrameLayout mCustomView;
+	private LinearLayout mFooterView;
 	
 	public String mTitleString;
 	public String mButton1Text;
@@ -69,7 +75,7 @@ public abstract class DialogType {
 	}
 	
 	public DialogType(Context context, 
-			PopupWindow popupWindow, 
+			XXDropDownDialog popupWindow, 
 			DialogInterface dialogInterface, 
 			ItemAdapter adapter,
 			View menuView
@@ -83,12 +89,101 @@ public abstract class DialogType {
 		mTitleView = (LinearLayout)menuView.findViewById(R.id.dialog_title_view);
 		mTitleText = (TextView) menuView.findViewById(R.id.dialog_title_text);
 		mCustomView = (FrameLayout)menuView.findViewById(R.id.dialog_custom_view);
+		mFooterView = (LinearLayout)menuView.findViewById(R.id.dialog_footer_view);
 		init();
 	}
 	
 	public void init() {
 		mMessageList = new ArrayList<String>();
 		mItemList = new ArrayList<Item>();
+	}
+	
+	private void createFooterView() {
+		
+		boolean hasDivider = false;
+		
+    	if(mButton1Text != null) {
+    		Button btn1 = new Button(mContext);
+    		btn1.setBackgroundResource(R.drawable.hw_dropdown_dialog_btn_footer_view);
+    		btn1.setText(mButton1Text);
+    		btn1.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1));
+    		mFooterView.addView(btn1);
+    		btn1.setOnClickListener(new android.view.View.OnClickListener(){
+
+				@Override
+				public void onClick(View arg0) {
+					
+					if(mPositiveOnClickListener != null) {
+						mPositiveOnClickListener.onClick(mDialogInterface, DialogInterface.BUTTON_POSITIVE);
+					}
+					
+					cancelDialog();
+				}});
+    		
+    		hasDivider = true;
+    	}
+    	
+    	if(mButton2Text != null) {
+    		if(hasDivider == true) {
+    			ImageView dividerImg= new ImageView(mContext);
+                final LinearLayout.LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 0);
+                dividerImg.setLayoutParams(lp);
+    			dividerImg.setBackgroundResource(R.drawable.hw_dropdown_dialog_btn_footer_view);
+    			mFooterView.addView(dividerImg);
+    		}
+    		
+    		Button btn2 = new Button(mContext);
+    		btn2.setBackgroundResource(R.drawable.hw_dropdown_dialog_btn_footer_view);
+    		btn2.setText(mButton2Text);
+    		btn2.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1));
+    		mFooterView.addView(btn2);
+    		
+    		btn2.setOnClickListener(new android.view.View.OnClickListener(){
+
+				@Override
+				public void onClick(View arg0) {
+					
+					if(mNegativeOnClickListener != null) {
+						mNegativeOnClickListener.onClick(mDialogInterface, DialogInterface.BUTTON_NEGATIVE);
+					}
+					
+					if(mOnCancelListener != null) {
+						mOnCancelListener.onCancel(mDialogInterface);
+					}
+					
+					cancelDialog();
+				}});
+    		
+    		hasDivider = true;
+    	}
+    	
+    	if(mButton3Text != null) {
+    		if(hasDivider == true) {
+    			ImageView dividerImg= new ImageView(mContext);
+                final LinearLayout.LayoutParams lp = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 0);
+                dividerImg.setLayoutParams(lp);
+    			dividerImg.setBackgroundResource(R.drawable.dialog_list_btn_bg_normal);
+    			mFooterView.addView(dividerImg);
+    		}
+    		
+    		Button btn3 = new Button(mContext);
+    		btn3.setBackgroundResource(R.drawable.hw_dropdown_dialog_btn_footer_view);
+    		btn3.setText(mButton3Text);
+    		btn3.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT, 1));
+    		mFooterView.addView(btn3);
+    		
+    		btn3.setOnClickListener(new android.view.View.OnClickListener(){
+
+				@Override
+				public void onClick(View arg0) {
+					
+					if(mOnDismissListener != null) {
+						mOnDismissListener.onDismiss(mDialogInterface);
+					}
+					
+					cancelDialog();
+				}});
+    	}    
 	}
 	
 	public void onDropdownDialogItemClick(AdapterView<?> arg0, View arg1,
@@ -99,42 +194,7 @@ public abstract class DialogType {
 			which += mMessageList.size();
 		}
 		
-		Item item = (Item)mAdapter.getItem(arg2);
-        if(item.getTag(1) != null || item.getTag(11) != null) {
-			OnClickListener l = (OnClickListener)item.getTag(1);
-			if(l != null) {
-				l.onClick(mDialogInterface, DialogInterface.BUTTON_POSITIVE);
-			}
-			
-			OnClickListener ll = (OnClickListener)item.getTag(1);
-			if(ll != null) {
-				
-			}
-			
-			cancel();
-		} else if(item.getTag(2) != null || item.getTag(22) != null) {
-			OnClickListener l = (OnClickListener)item.getTag(2);
-			if(l != null) {
-				l.onClick(mDialogInterface, DialogInterface.BUTTON_NEGATIVE);
-			}
-			
-			DialogInterface.OnCancelListener ll = (DialogInterface.OnCancelListener)item.getTag(22);
-			if(ll != null) {
-				ll.onCancel(mDialogInterface);
-			}
-			
-			cancel();
-		} else if(item.getTag(3) != null || item.getTag(33) != null) {
-			DialogInterface.OnDismissListener ll = (DialogInterface.OnDismissListener)item.getTag(33);
-			if(ll != null) {
-				ll.onDismiss(mDialogInterface);
-			}
-			
-			cancel();
-		} else {
-			callBack(arg2-which);
-		}
-		
+		callBack(arg2-which);
 	}
 	
 	public abstract Item createItemView(String text, boolean selected);
@@ -190,7 +250,7 @@ public abstract class DialogType {
 		if(mOnClickListener != null) mOnClickListener.onClick(mDialogInterface, index);
 	}
 	
-	public void show(View v) {
+	public void createDialogRootView() {
 		if(mTitleString != null) {
 			mTitleView.setVisibility(View.VISIBLE);
 			mTitleText.setText(mTitleString);
@@ -206,30 +266,7 @@ public abstract class DialogType {
     	
     	showChild();
     	
-    	if(mButton1Text != null) {
-    		Item btn1 = new DropdownDialogBtnItem(mButton1Text);
-    		btn1.setTag(1, mPositiveOnClickListener);
-    		mAdapter.add(btn1);
-    	}
-    	
-    	if(mButton2Text != null) {
-    		Item btn2 = new DropdownDialogBtnItem(mButton2Text);
-    		btn2.setTag(2, mNegativeOnClickListener);
-    		btn2.setTag(22, mOnCancelListener);
-    		mAdapter.add(btn2);
-    	}
-    	
-    	if(mButton3Text != null) {
-    		Item btn3 = new DropdownDialogBtnItem(mButton3Text);
-    		btn3.setTag(3, mDismissOnClickListener);
-    		btn3.setTag(33, mOnDismissListener);
-    		mAdapter.add(btn3);
-    	}    	
-    	mPopupWindow.setAnimationStyle(R.style.HWDroid_Animation_DropDownDialog);
-    	View layout = mPopupWindow.getContentView().findViewById(R.id.pop_layout);
-    	Animation upAnim = AnimationUtils.loadAnimation(mContext, R.anim.hw_dropdown_dialog_from_bottom);
-    	layout.startAnimation(upAnim);
-    	mPopupWindow.showAtLocation(v, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
+    	createFooterView();
 	}
     
 	public void setOnCancelListener(DialogInterface.OnCancelListener listener) {
@@ -263,7 +300,7 @@ public abstract class DialogType {
 
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					cancel();
+					cancelDialog();
 				}};
     	} else {
         	mPositiveOnClickListener = listener;
@@ -278,7 +315,7 @@ public abstract class DialogType {
 
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					cancel();
+					cancelDialog();
 				}};
     	} else {
     		mNegativeOnClickListener = listener;
@@ -293,7 +330,7 @@ public abstract class DialogType {
 
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					cancel();
+					cancelDialog();
 				}};
     	} else {
     		mDismissOnClickListener = listener;
@@ -318,7 +355,7 @@ public abstract class DialogType {
 			    break;
         	case HANDLER_CLOSE_DIALOG:
         		try {
-        		    mPopupWindow.dismiss();
+        		    mPopupWindow.cancel();
         		} catch(Exception e){
         			
         		}
@@ -329,7 +366,7 @@ public abstract class DialogType {
         }
     }
     
-	public void cancel() {
+	public void cancelDialog() {
 		mHandler.sendEmptyMessage(HANDLER_CLOSE_DIALOG);
 	}
 	
@@ -337,7 +374,7 @@ public abstract class DialogType {
 		if(mOnDismissListener != null) {
 			mOnDismissListener.onDismiss(mDialogInterface);
 		}
-		cancel();
+		cancelDialog();
 	}
 
 }

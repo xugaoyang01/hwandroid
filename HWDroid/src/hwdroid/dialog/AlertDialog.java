@@ -63,8 +63,8 @@ public class AlertDialog extends Dialog{
 	}
 
 	@Override
-	public void show(View v) {
-		mXXDropDownDialog.show(v);
+	public void show() {
+		mXXDropDownDialog.showDialog();
 	}
     
     public void setTitle(int titleId) {

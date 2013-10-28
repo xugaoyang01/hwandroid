@@ -90,9 +90,9 @@ public class ProgressDialog extends AlertDialog{
 	}
 	
 	@Override
-    public void show(View v) {
+    public void show() {
 		mXXDropDownDialog.setProgressItem(mMessage, mOnCancelListener);
-        mXXDropDownDialog.show(v);
+        mXXDropDownDialog.showDialog();
     }
 	
 	public static ProgressDialog show (
@@ -101,6 +101,9 @@ public class ProgressDialog extends AlertDialog{
 			CharSequence message) {
 		
 		ProgressDialog dialog = new ProgressDialog(context);
+		dialog.setTitle(title);
+		dialog.setMessage(message);
+		dialog.show();
 		return dialog;
 	}
 	
@@ -110,14 +113,14 @@ public class ProgressDialog extends AlertDialog{
 			CharSequence message, 
 			boolean indeterminate, 
 			boolean cancelable, 
-			DialogInterface.OnCancelListener cancelListener, View v) {
+			DialogInterface.OnCancelListener cancelListener) {
 		ProgressDialog dialog = new ProgressDialog(context);
 		dialog.setTitle(title);
 		dialog.setMessage(message);
 		dialog.setIndeterminate(indeterminate);
 		dialog.setCancelable(cancelable);
 		dialog.setOnCancelListener(cancelListener);
-		dialog.show(v);
+		dialog.show();
 		return dialog;
 	}
 	
@@ -126,18 +129,16 @@ public class ProgressDialog extends AlertDialog{
 			CharSequence title, 
 			CharSequence message, 
 			boolean indeterminate, 
-			boolean cancelable,
-			View v) {
-		return ProgressDialog.show(context, title, message, indeterminate, false, null, v);
+			boolean cancelable) {
+		return ProgressDialog.show(context, title, message, indeterminate, false, null);
 	}
 	
 	public static ProgressDialog show (
 			Context context, 
 			CharSequence title, 
 			CharSequence message, 
-			boolean indeterminate,
-			View v) {
-		return ProgressDialog.show(context, title, message, indeterminate, false, v);
+			boolean indeterminate) {
+		return ProgressDialog.show(context, title, message, indeterminate, false);
 	}
 
 }

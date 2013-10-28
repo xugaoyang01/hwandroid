@@ -10,7 +10,7 @@ import hwdroid.widget.item.Item;
 
 public class SingleChoiceItemDialogType extends DialogType{
 
-	public SingleChoiceItemDialogType(Context context, PopupWindow popupWindow,
+	public SingleChoiceItemDialogType(Context context, XXDropDownDialog popupWindow,
 			DialogInterface dialogInterface, ItemAdapter adapter,
 			View menuView) {
 		super(context, popupWindow, dialogInterface, adapter, menuView);
@@ -36,7 +36,7 @@ public class SingleChoiceItemDialogType extends DialogType{
 	public void callBack(int index) {
 		if(mOnClickListener != null) {
 			mOnClickListener.onClick(mDialogInterface, index);
-			cancel();
+			cancelDialog();
 		}
 	}
 

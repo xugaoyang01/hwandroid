@@ -10,7 +10,7 @@ import hwdroid.widget.item.Item;
 
 public class MultiChoiceItemDialogType extends DialogType {
 	
-	public MultiChoiceItemDialogType(Context context, PopupWindow popupWindow,
+	public MultiChoiceItemDialogType(Context context, XXDropDownDialog popupWindow,
 			DialogInterface dialogInterface, 
 			ItemAdapter adapter,
 			View menuView) {

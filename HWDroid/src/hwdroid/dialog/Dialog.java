@@ -53,7 +53,7 @@ public abstract class Dialog {
 	public abstract void setTitle (int titleId);
 	public abstract void setTitle (CharSequence title);
 	public abstract void setView(View v);
-	public abstract void show (View v);
+	public abstract void show ();
 	public abstract void dismiss();
 
 }

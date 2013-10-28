@@ -29,7 +29,7 @@ public class ProgressItemDialogType extends DialogType{
 	
 	private ProgressHandler mProgressHandler;
 
-	public ProgressItemDialogType(Context context, PopupWindow popupWindow,
+	public ProgressItemDialogType(Context context, XXDropDownDialog popupWindow,
 			DialogInterface dialogInterface, ItemAdapter adapter,
 			View menuView) {
 		super(context, popupWindow, dialogInterface, adapter, menuView);

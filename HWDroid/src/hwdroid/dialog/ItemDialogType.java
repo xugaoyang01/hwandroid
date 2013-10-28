@@ -11,7 +11,7 @@ import hwdroid.widget.item.Item;
 public class ItemDialogType extends DialogType{
 	
 	public ItemDialogType(Context context, 
-			PopupWindow popupWindow,
+			XXDropDownDialog popupWindow,
 			DialogInterface dialogInterface, 
 			ItemAdapter adapter,
 			View menuView) {

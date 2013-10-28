@@ -3,9 +3,13 @@ package hwdroid.dialog;
 import hwdroid.widget.ItemAdapter;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.view.Display;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.View.OnTouchListener;
 import android.widget.AbsListView.LayoutParams;
 import android.widget.AdapterView;
@@ -16,12 +20,13 @@ import android.widget.PopupWindow;
 
 import com.hw.droid.R;
 
-public class XXDropDownDialog extends PopupWindow implements DialogInterface, OnItemClickListener {
+public class XXDropDownDialog implements DialogInterface{
 	
 	private Context mContext;
 	private View mMenuView;
 	private ListView mListView;
 	private ItemAdapter mAdapter;
+	private android.app.Dialog mDialog;
 	
 	private DialogType mItemDialogType;
 	private DialogType mMessageItemDialogType;
@@ -32,17 +37,31 @@ public class XXDropDownDialog extends PopupWindow implements DialogInterface, On
 	DialogAdapter.OnClickListener mListListener;
 
 	public XXDropDownDialog(Context context) {
-		super(context);
 		mContext = context;
+		
+		mDialog = new android.app.Dialog(context, R.style.Theme_HWDroid_Dialog_DropDialogDialog);
 		
 		LayoutInflater inflater = (LayoutInflater) mContext
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		mMenuView = inflater.inflate(R.layout.hw_dropdown_dialog_view, null);
+		final int cFullFillWidth = 10000;
+		mMenuView.setMinimumWidth(cFullFillWidth);
 		mListView = (ListView) mMenuView.findViewById(R.id.dialog_listview);
     	mListView.setDivider(null);
     	mListView.setDividerHeight(0);
 		
-		mListView.setOnItemClickListener(this);	
+		mListView.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
+			    if (mListListener == null) {
+			        mDialogType.onDropdownDialogItemClick(arg0, view, position, id);
+			    } else {
+			        //mListListener.onClick(this, view, position);	        
+			    }
+			}}
+		);
+		
 		mAdapter = new ItemAdapter(mContext);
 		mAdapter.setNotifyOnChange(false);
     	mListView.setAdapter(mAdapter);
@@ -53,26 +72,26 @@ public class XXDropDownDialog extends PopupWindow implements DialogInterface, On
     	mSingleChoiceItemDialogType = new SingleChoiceItemDialogType(context, this, this, mAdapter, mMenuView);
     	mMultiChoiceItemDialogType = new MultiChoiceItemDialogType(context, this, this, mAdapter, mMenuView);
     	mDialogType = mMessageItemDialogType;
-		
-		setContentView(mMenuView);
-		setWidth(LayoutParams.MATCH_PARENT);
-		setHeight(LayoutParams.WRAP_CONTENT);
-		setFocusable(true);
-		//this.setAnimationStyle(R.style.AnimBottom);
-		ColorDrawable dw = new ColorDrawable(0xb0000000);
-		setBackgroundDrawable(dw);
-		mMenuView.setOnTouchListener(new OnTouchListener() {
-			public boolean onTouch(View v, MotionEvent event) {	
-				int height = mMenuView.findViewById(R.id.pop_layout).getTop();
-				int y=(int) event.getY();
-				if(event.getAction()==MotionEvent.ACTION_UP){
-					if(y<height){
-						//dismiss();
-					}
-				}				
-				return true;
-			}
-		});
+    	
+		mDialog.setContentView(mMenuView);	
+		Window w = mDialog.getWindow();
+		WindowManager windowManager = w.getWindowManager();
+		Display display = windowManager.getDefaultDisplay();
+		WindowManager.LayoutParams lp = mDialog.getWindow().getAttributes();
+		lp.width = (int)(display.getWidth());
+		lp.x = 0;
+		final int cMakeBottom = -1000;
+		lp.y = cMakeBottom;
+		lp.gravity = Gravity.BOTTOM;
+		mDialog.getWindow().setAttributes(lp);
+		mDialog.setCanceledOnTouchOutside(true);
+	}
+	
+	public void showDialog() {
+		mDialogType.createDialogRootView();
+		Window window = mDialog.getWindow(); 
+		window.setWindowAnimations(R.style.DropDownDialogAnimation); 
+		mDialog.show();
 	}
 	
 	public void setOnCancelListener(DialogInterface.OnCancelListener listener) {
@@ -216,24 +235,12 @@ public class XXDropDownDialog extends PopupWindow implements DialogInterface, On
     	setCurrentDialogType(mMultiChoiceItemDialogType);
         mDialogType.addItems(items, listener, checkedItems);
     }
-    
-    public void show(View v) {
-    	mDialogType.show(v);
-    }
-
+   
 	@Override
 	public void cancel() {
-		mDialogType.cancel();
+		mDialog.cancel();
 	}
 
-	@Override
-	public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
-	    if (mListListener == null) {
-	        mDialogType.onDropdownDialogItemClick(arg0, view, position, id);
-	    } else {
-	        mListListener.onClick(this, view, position);	        
-	    }
-	}
 	
 	private void setCurrentDialogType(DialogType type) {
 		if(mDialogType == mMessageItemDialogType) {
@@ -249,6 +256,12 @@ public class XXDropDownDialog extends PopupWindow implements DialogInterface, On
 	public void setAdapter(ListAdapter adapter, DialogAdapter.OnClickListener listener) {
 	    mListView.setAdapter(adapter);
 	    mListListener = listener;
+	}
+
+	@Override
+	public void dismiss() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

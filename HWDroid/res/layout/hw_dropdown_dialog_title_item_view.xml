@@ -17,7 +17,7 @@
 */
 -->
 
-<com.yunos.yundroid.widget.itemview.DropdownDialogTitleItemView	
+<hwdroid.widget.itemview.DropdownDialogTitleItemView	
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_height="wrap_content"
 	android:layout_width="match_parent"
@@ -42,4 +42,4 @@
 			android:ellipsize="marquee"/>
     </LinearLayout>
     
-</com.yunos.yundroid.widget.itemview.DropdownDialogTitleItemView>
+</hwdroid.widget.itemview.DropdownDialogTitleItemView>

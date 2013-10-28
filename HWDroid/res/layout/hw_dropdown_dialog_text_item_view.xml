@@ -17,7 +17,7 @@
 */
 -->
 
-<com.yunos.yundroid.widget.itemview.DropdownDialogTextItemView	
+<hwdroid.widget.itemview.DropdownDialogTextItemView	
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_height="wrap_content"
 	android:layout_width="match_parent"
@@ -51,4 +51,4 @@
 	    android:layout_marginRight="12dp"
 	    android:background="@drawable/dialog_line_horizontal">
 	</View>   
-</com.yunos.yundroid.widget.itemview.DropdownDialogTextItemView>
+</hwdroid.widget.itemview.DropdownDialogTextItemView>
